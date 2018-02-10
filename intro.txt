@@ -1,0 +1,4 @@
+Welcome to the UniBit Framework installer. 
+
+Thanks for using the UniBit Framework.
+Please leave feedback!

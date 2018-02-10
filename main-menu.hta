@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>UniBit 1.2.0</title>
+<HTA:APPLICATION
+     ID="objAutoRefresh"
+     APPLICATIONNAME="UniBit 1.2.0"
+     SCROLL="auto"
+     SINGLEINSTANCE="yes"
+>
+</head>
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+p:hover, h1:hover, a:hover {
+    background-color: lightgrey;
+}
+</style>
+<script language="VBScript">
+
+    Sub GetOSVersion
+       strComputer = "."
+           Set objWMIService = GetObject("winmgmts:\\" & strComputer &  "\root\cimv2")
+
+           Set colOperatingSystems = objWMIService.ExecQuery _
+               ("Select * from Win32_OperatingSystem")
+
+           For Each objOperatingSystem in colOperatingSystems
+               Msgbox objOperatingSystem.Caption & " " & _
+                   objOperatingSystem.Version
+           Next
+    End Sub
+
+    Sub RunScript
+        Msgbox "Coming Soon."
+    End Sub
+
+</script>
+  <body>
+  <div class="wrapper">
+    <div class="container"><center><span id="ClickableSpan" onClick="RunScript" >
+    <a href="#" class="button">Send</a> <a href="#" class="button">Receive</a> <a href="#" class="button">Address Book</a></span> <a href="http://103.209.194.103:2750/chains" class="button">Block Explorer</a> <a href="https://github.com/unibitlabs/Unibit-Public/blob/master/README.md" class="button">View Readme</a>
+    </center></div><br>
+    <div class="title"><center>
+    <h2>Welcome to the UniBit Framework</h2></center>
+  </div>
+      <p><center>This is <strong>UniBit</strong>, a free, fully secure cryptocurrency wallet designed by <a href="http://www.unibit.io" rel="nofollow">UniBit Labs</a>.<br>
+      The photos in this template are from <a href="http://slack.unibit.io/"> Volunteers</a> in our Slack channel.<br>
+      This free theme is released under the unlicense, so feel free to modify it to your hearts content.<br><br> Have fun. :) </center></p>
+      <div id="banner" class="container"><center><img src="unibit.png" alt="" /></center></div><br><center>
+    <input type="button" value="What Is My Operating System?" name="run_button"  onClick="GetOSVersion"><br>This Operating System button is an example of how anyone can write an additional module for this framework with VB script.</center>
+  	<div id="welcome" class="container">
+  	</div><br>
+</div>
+</body>
+</html>
